@@ -3,9 +3,10 @@ const bodyParser = require("body-parser");
 
 const app=express();
 
+app.set("view engine","ejs");
+
 app.get("/",function(req,res){
-    res.write("<h1>nodemon test</h1>");
-    res.write("sup homie");
+    res.render("lists",{var_test:"Test"});
 });
 
 app.listen(8383,()=>{
