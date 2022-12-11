@@ -1,24 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include("header") -%>
+  <div class="box" id="heading" >
+  <h1><%= params.listTitle %></h1>
+  </div>
+  <div class="box">
+      <%params.items.forEach(element=>{%>
+    <div class="item">
+        <input type="checkbox">
+        <p><%= element %></p>
+    </div>
+      <%})%>
+      <form class="item" action="/" method="post">
+        <input type="text" name="item" id="item" placeholder="New Item" autocomplete="off"/>
+        <button type="submit" name="list" value=<%= params.listTitle %>>+</button>
+      </form>
+  </div>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TO-DO</title>
-</head>
-
-<body>
-  <h1><%= params.day %></h1>
-  <ul>
-    <%params.items.forEach(element=>{%>
-    <li><%= element %></li>
-    <%})%>
-  </ul>
-  <form action="/" method="post">
-    <input type="text" name="item" id="item" placeholder="Enter Here" />
-    <button type="submit" name="button">Add</button>
-  </form>
-</body>
-
-</html>
+<%- include("footer") -%>
