@@ -1,6 +1,5 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const get_date = require("./date");
 const date = require(__dirname + "/date.js");
 
 let items=[];
