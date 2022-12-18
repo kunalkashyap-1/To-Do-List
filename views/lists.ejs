@@ -4,11 +4,14 @@
   </div>
   <div class="box">
       <%params.items.forEach(element=>{%>
+        <form class="item" action="/delete" method="post">
     <div class="item">
-        <input type="checkbox">
-        <p><%= element %></p>
+        <input type="checkbox" name="checkbox" value="<%= element._id %>" onchange="this.form.submit()" >
+        <p><%= element.name %></p>
     </div>
+  </form>
       <%})%>
+
       <form class="item" action="/" method="post">
         <input type="text" name="item" id="item" placeholder="New Item" autocomplete="off"/>
         <button type="submit" name="list" value=<%= params.listTitle %>>+</button>
