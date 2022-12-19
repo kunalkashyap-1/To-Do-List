@@ -7,7 +7,8 @@ const day = date.get_date();
 const _ = require("lodash");
 
 mongoose.set('strictQuery', true);
-mongoose.connect('mongodb://127.0.0.1:27020/todolistDB');
+mongoose.connect('mongodb+srv://admin:admin@cluster0.eodclot.mongodb.net/todolistDB');
+// mongoose.connect('mongodb://127.0.0.1:27020/todolistDB');
 
 const listSchema = {
     name: String
